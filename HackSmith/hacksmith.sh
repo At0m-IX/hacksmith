@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # HackSmith: Hackers Toolkit Installer
-# Version: 3.0
+# Version: 1.0 Alpha
 # Author: At0m-IX
 # License: MIT
-# GitHub: https://github.com/yourusername/hacksmith
+# GitHub: https://github.com/At0-IX/hacksmith
 
 set -e
-
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -17,46 +16,41 @@ MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-
 print_color() {
     printf "${1}${2}${NC}\n"
 }
 
-
 print_banner() {
+    sleep 2
     clear
     echo -e "${MAGENTA}"
     cat << "EOF"
- _   _            _    ____            _ _   _     
-| | | | __ _  ___| | _/ ___|  _ __ ___ (_) |_| |__  
-| |_| |/ _ |/ __| |/ \___ \ | '_  _ \| | __| '_ \ 
-|  _  | (_| | (__|   < ___) || | | | | | | |_| | | |
-|_| |_|\__,_|\___|_|\_\____(_)_| |_| |_|_|\__|_| |_|
-EOF
-    sleep 0.1
-    clear
-    echo -e "${MAGENTA}"
-    cat << "EOF"
- _   _            _    ____            _ _   _     
-| | | | __ _  ___| | _/ ___|  _ __ ___ (_) |_| |__  
-| |_| |/ _ |/ __| |/ \___ \ | '_  _ \| | __| '_ \ 
-|  _  | (_| | (__|   < ___) || | | | | | | |_| | | |
-|_| |_|\__,_|\___|_|\_\____(_)_| |_| |_|_|\__|_| |_|
-                                                    
-EOF
-    sleep 0.1
-    clear
-    echo -e "${MAGENTA}"
-    cat << "EOF"
- _   _            _    ____            _ _   _     
-| | | | __ _  ___| | _/ ___|  _ __ ___ (_) |_| |__  
-| |_| |/ _ |/ __| |/ \___ \ | '_  _ \| | __| '_ \ 
-|  _  | (_| | (__|   < ___) || | | | | | | |_| | | |
-|_| |_|\__,_|\___|_|\_\____(_)_| |_| |_|_|\__|_| |_|
+
+ _   _            _     ____            _ _   _     
+| | | | __ _  ___| | __/ ___| _ __ ___ (_) |_| |__  
+| |_| |/ _ |/ __| |/ /\___ \| '_  _ \| | __| '_ \ \
+|  _  | (_| | (__|   <  ___) | | | | | | | |_| | | |
+|_| |_|\__,_|\___|_|\_\|____/|_| |_| |_|_|\__|_| |_|
+
+      ____, 
+     /.---|
+         |     ___
+         (=\.  /-. \
+          |\/\_|"|  |
+          |_\ |;-|  ;
+          | / \| |_/ \
+          | )/\/      \
+          | ( '|  \   |
+          |    \_ /   \
+          |    /  \_.--\
+          \    |    (|\
+           |   |     \
+           |   |      '.
+           |  /         \
+Hacksmith   \  \.__.__.-._)
 
 -By @At0m-IX
-
-Hackers Toolkit Installer
+-Hackers Toolkit Installer
 EOF
     echo -e "${NC}"
     print_color $YELLOW "Hackers Toolkit"
@@ -66,7 +60,6 @@ EOF
     echo
 }
 
-
 detect_os() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
@@ -74,8 +67,8 @@ detect_os() {
     else
         OS=$(uname -s)
     fi
+    print_color $BLUE "Detected OS: $OS"
 }
-
 
 check_root() {
     if [ "$EUID" -ne 0 ]; then
@@ -83,7 +76,6 @@ check_root() {
         exit 1
     fi
 }
-
 
 show_spinner() {
     local pid=$1
@@ -98,7 +90,6 @@ show_spinner() {
     done
     printf "    \b\b\b\b"
 }
-
 
 install_common_tools() {
     print_color $BLUE "Installing common hacking tools..."
@@ -139,7 +130,6 @@ install_common_tools() {
         print_color $GREEN "✓ Installed $tool"
     done
 }
-
 
 install_python_tools() {
     print_color $BLUE "Installing Python-based hacking tools..."
@@ -226,17 +216,11 @@ setup_additional_tools() {
         print_color $GREEN "✓ Cloned $tool_name"
     done
 
-  
-
-    
-
-    
     print_color $YELLOW "Installing BeEF..."
     git clone https://github.com/beefproject/beef.git /opt/beef
     cd /opt/beef && ./install
     print_color $GREEN "✓ Installed BeEF"
 }
-
 
 setup_environment() {
     echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
@@ -262,8 +246,6 @@ Instructions to get started:
 2. Use 'tools' to list all available tools.
 3. For more details on contributing, type 'contribute'.
 4. Use 'clear' to clear the screen.
-
-
 EOF
 }
 
@@ -286,7 +268,6 @@ Additional tools:
 EOF
 }
 
-
 show_contribute() {
     cat << EOF
 To contribute to HackSmith, please visit the GitHub repository at:
@@ -295,7 +276,6 @@ https://github.com/At0m-IX/hacksmith
 Feel free to fork the project, make improvements, and create pull requests.
 EOF
 }
-
 
 interactive_shell() {
     print_banner
@@ -316,13 +296,13 @@ interactive_shell() {
                 show_contribute
                 ;;
             exit)
-                print_color $GREEN "Exiting HackSmith shell. Happy Hacking!"
+                print_color $CYAN "Exiting HackSmith shell. Happy Hacking!"
                 exit 0
                 ;;
             install)
                 detect_os
                 check_root
-                if [[ "$OS" == "Ubuntu" || "$OS" == "Debian" ]]; then
+                if [[ "$OS" == "Ubuntu" || "$OS" == "Kali GNU/Linux" || "$OS" == "Debian" ]]; then
                     install_debian
                 elif [[ "$OS" == "Arch Linux" ]]; then
                     install_arch
@@ -332,7 +312,7 @@ interactive_shell() {
                 fi
                 setup_additional_tools
                 setup_environment
-                print_color $GREEN "Installation complete. Happy Hacking!"
+                print_color $CYAN "Installation complete. Happy Hacking!"
                 ;;
             *)
                 print_color $RED "Unknown command: $cmd"
@@ -350,7 +330,7 @@ else
         install)
             detect_os
             check_root
-            if [[ "$OS" == "Ubuntu" || "$OS" == "Debian" ]]; then
+            if [[ "$OS" == "Ubuntu" || "$OS" ==  "Kali GNU/Linux" || "$OS" == "Debian" ]]; then
                 install_debian
             elif [[ "$OS" == "Arch Linux" ]]; then
                 install_arch
@@ -360,10 +340,11 @@ else
             fi
             setup_additional_tools
             setup_environment
-            print_color $GREEN "Installation complete. Happy Hacking!"
+            print_color $CYAN "Installation complete. Happy Hacking!"
             ;;
         *)
             show_help
             ;;
     esac
 fi
+add in these dont change any other thing

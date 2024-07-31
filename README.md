@@ -1,11 +1,11 @@
 # HackSmith: Hackers Toolkit Installer
 
-Version: 1.0 Alpha 
-Author: At0m-IX
+<b>Version: 1.0 Alpha <br>
+Author: At0m-IX</b>
 
 # Overview
 
-<b>HackSmith is a comprehensive toolkit installer designed to set up essential and advanced hacking tools on your system. This script provides a seamless installation experience, whether you're using Debian/Ubuntu or Arch Linux distributions.</b>
+<b>HackSmith is a comprehensive toolkit installer designed to set up essential and advanced hacking tools on your system. This script provides a seamless installation experience, whether you're using Debian/Ubuntu or Arch Linux distributions.
 
 ![240730_15h16m55s_screenshot](https://github.com/user-attachments/assets/c8742f83-05c4-4290-8f4a-52ccb63ebe73)
 
@@ -80,6 +80,6 @@ License
 HackSmith is licensed under the MIT License. See the LICENSE file for details.
 Disclaimer
 
-This toolkit is intended for educational and ethical hacking purposes only. Use it responsibly and ensure you have permission before testing any systems.
+This toolkit is intended for educational and ethical hacking purposes only. Use it responsibly and ensure you have permission before testing any systems. </br>
 
 # HAPPY HACKING!

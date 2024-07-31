@@ -64,10 +64,11 @@ detect_os() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         OS=$NAME
+        print_color $BLUE "Detected OS: $OS"
     else
-        OS=$(uname -s)
+        print_color $RED "Unsupported operating system"
+        exit 1
     fi
-    print_color $BLUE "Detected OS: $OS"
 }
 
 check_root() {
@@ -93,7 +94,7 @@ show_spinner() {
 
 install_common_tools() {
     print_color $BLUE "Installing common hacking tools..."
-    
+
     tools=(
         "nmap" "Network exploration tool and security scanner"
         "wireshark" "Network protocol analyzer"
@@ -133,7 +134,7 @@ install_common_tools() {
 
 install_python_tools() {
     print_color $BLUE "Installing Python-based hacking tools..."
-    
+
     pip_tools=(
         "scapy" "Packet manipulation library"
         "impacket" "Network protocols library"
@@ -347,4 +348,3 @@ else
             ;;
     esac
 fi
-add in these dont change any other thing

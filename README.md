@@ -5,12 +5,15 @@ Author: At0m-IX</b>
 
 # Overview
 
-<b>HackSmith is a comprehensive toolkit installer designed to set up essential and advanced hacking tools on your system. This script provides a seamless installation experience, whether you're using Debian/Ubuntu or Arch Linux distributions.
+<b>HackSmith is a comprehensive toolkit installer designed to set up essential and advanced hacking tools on your system. This script provides a seamless installation experience, whether you're using Debian/Ubuntu, Kali or Arch Linux distributions.
 
-![240730_15h16m55s_screenshot](https://github.com/user-attachments/assets/c8742f83-05c4-4290-8f4a-52ccb63ebe73)
+![1](https://github.com/user-attachments/assets/28a2ceee-38f5-484c-ad88-e0158207883e)
 
-![240730_15h17m54s_screenshot](https://github.com/user-attachments/assets/6ab53aae-04bc-4f0b-8c16-b735cad52b3e)
-![240730_15h19m22s_screenshot](https://github.com/user-attachments/assets/950b3fa9-6a23-49ec-9b83-0c6fdec6c23b)
+![2](https://github.com/user-attachments/assets/99c5ac1c-06ab-48af-a8f0-a59f7bc1141b)
+
+![3](https://github.com/user-attachments/assets/43108812-655f-463e-bfbb-f4b8abc59628)
+
+![4](https://github.com/user-attachments/assets/53e5a9ac-cb7b-46ca-aefc-500199655a1d)
 
 
 Downloading may take time, Be Patient

@@ -4,7 +4,7 @@
 # Version: 1.0 Alpha
 # Author: At0m-IX
 # License: MIT
-# GitHub: https://github.com/At0-IX/hacksmith
+# GitHub: https://github.com/At0m-IX/hacksmith
 
 set -e
 
